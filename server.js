@@ -36,6 +36,7 @@ app.post('/api/rpc', async (req, res) => {
   }
 });
 
+// ── First-time setup endpoints ───────────────────────────────────────────────
 app.post('/api/setup', async (_req, res) => {
   try {
     res.json(await handlers.setup());
@@ -54,6 +55,7 @@ app.post('/api/init-password', async (req, res) => {
   }
 });
 
+// ── SPA fallback ─────────────────────────────────────────────────────────────
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });

@@ -22,6 +22,7 @@ function validate(id) {
   return true;
 }
 
+// Limpiar sesiones expiradas cada hora
 setInterval(() => {
   const now = Date.now();
   for (const [id, s] of sessions) {
